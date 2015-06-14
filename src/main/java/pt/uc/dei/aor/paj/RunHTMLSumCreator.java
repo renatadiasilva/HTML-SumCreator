@@ -8,6 +8,7 @@ public class RunHTMLSumCreator {
 		// XSL já preparado... ok abrir em firefox
 		Subscriber r = new Subscriber();
 		r.subscribe();
+	
 	}
 
 }
