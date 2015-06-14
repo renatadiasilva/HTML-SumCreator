@@ -87,7 +87,7 @@
 					<!-- will main class to MANIFEST.MF -->
 					<archive>
 						<manifest>
-							<mainClass>RunHTMLSumCreator</mainClass>
+							<mainClass>pt.uc.dei.aor.paj.RunHTMLSumCreator</mainClass>
 						</manifest>
 					</archive>
 					<!-- will assembly the exploded dependencies within our uber jar -->
