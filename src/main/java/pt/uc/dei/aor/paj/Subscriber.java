@@ -40,7 +40,7 @@ public class Subscriber implements MessageListener {
 			mc.setMessageListener(this);
 			//Wait for stop
 			while (!stop) {
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			}
 			//Exit
 			System.out.println("Exiting...");
