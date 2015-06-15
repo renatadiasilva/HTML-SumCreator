@@ -16,6 +16,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import pt.uc.dei.aor.paj.xml.TransformXML;
+import pt.uc.dei.aor.paj.xml.XMLValidation;
 
 public class Subscriber implements MessageListener {
 	private ConnectionFactory cf;
@@ -55,13 +56,17 @@ public class Subscriber implements MessageListener {
 	public void onMessage(Message message) {
 		try {
 			String msgText = ((TextMessage) message).getText();
-//			System.out.println("Message: " + msgText);
 			//pass String to XML
 			if ("stop".equals(msgText))
 				stop = true;
 			else {
+				System.out.println("Message received.");
 				String filename = outputNameFile();
 				TransformXML.convertStringToXMLFile(msgText,filename);
+				System.out.println("String transformed to XML.");
+
+				/////////////// completar xsdPath
+//				XMLValidation.validateXMLSchema(xsdPath, filename)
 			}
 		} catch (JMSException e) {
 			e.printStackTrace();
@@ -76,13 +81,15 @@ public class Subscriber implements MessageListener {
 
 		Calendar now = new GregorianCalendar();
 		String filename = "..\\src\\main\\resources\\output";
-		filename += now.get(Calendar.YEAR);
-		filename += now.get(Calendar.MONTH);
-		filename += now.get(Calendar.DAY_OF_MONTH);
-		filename += now.get(Calendar.HOUR_OF_DAY);
-		filename += now.get(Calendar.MINUTE);
-		filename += now.get(Calendar.SECOND);
+		filename += "_"+now.get(Calendar.YEAR);
+		int mes = now.get(Calendar.MONTH)+1;
+		filename += "_"+mes+"";
+		filename += "_"+now.get(Calendar.DAY_OF_MONTH);
+		filename += "_"+now.get(Calendar.HOUR_OF_DAY);
+		filename += "_"+now.get(Calendar.MINUTE);
+		filename += "_"+now.get(Calendar.SECOND);
 		filename += ".xml";
+		System.out.println("NOME FICHEIRO: "+filename);
 		return filename;
 		
 	}
