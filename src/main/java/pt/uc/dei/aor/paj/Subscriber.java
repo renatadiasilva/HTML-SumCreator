@@ -61,12 +61,15 @@ public class Subscriber implements MessageListener {
 				stop = true;
 			else {
 				System.out.println("Message received.");
-				String filename = outputNameFile();
-				TransformXML.convertStringToXMLFile(msgText,filename);
+				String filepathXML = outputNameFile();
+				TransformXML.convertStringToXMLFile(msgText,filepathXML);
 				System.out.println("String transformed to XML.");
 
-				/////////////// completar xsdPath
-//				XMLValidation.validateXMLSchema(xsdPath, filename)
+				//XSD verification
+				String filepathXSD = "..\\src\\main\\resources\\text.xsl";
+				if (XMLValidation.validateXMLSchema(filepathXSD,filepathXML))
+					System.out.println("XSD Validation: OK.");
+				else System.out.println("XSD Validation: FAILED!");
 			}
 		} catch (JMSException e) {
 			e.printStackTrace();
