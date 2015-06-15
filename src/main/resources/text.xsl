@@ -7,7 +7,6 @@
 		<div style="display: block">
 		
 			<xsl:for-each select="noticias/noticia">
-	
 <!-- 				<div style="float: left; width:550px; max-width:550px; background-color:#ddd; padding:10px; margin:10px"> -->
 				<div style="width:550px; max-width:550px; background-color:#ddd; padding:10px; margin:10px; margin-left: auto; margin-right: auto;">
 			
@@ -37,7 +36,7 @@
 							<p><xsl:value-of select="autor" /><br/><xsl:value-of select="data" /></p>
 						</div>
 						
-						<!-- Descrição -->
+						<!-- Descricao -->
 						<div style="font-size: 11pt;text-align:justify;color:#333">
 							<p><xsl:value-of select="descricao" /></p>							
 						</div>
