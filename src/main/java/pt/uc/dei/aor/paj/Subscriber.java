@@ -91,6 +91,7 @@ public class Subscriber implements MessageListener {
 		filename += "_"+now.get(Calendar.HOUR_OF_DAY);
 		filename += "_"+now.get(Calendar.MINUTE);
 		filename += "_"+now.get(Calendar.SECOND);
+		filename += "_"+now.get(Calendar.MILLISECOND);
 		filename += ".xml";
 		return filename;
 		
