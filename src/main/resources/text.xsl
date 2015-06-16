@@ -10,21 +10,24 @@
 <!-- 				<div style="float: left; width:550px; max-width:550px; background-color:#ddd; padding:10px; margin:10px"> -->
 				<div style="background-color:#BBFBD1; padding:10px; margin:10px; margin-left: auto; margin-right: auto;">
 			
-					<a style="text-decoration: none; color:#333" target="_blank">
-						<xsl:attribute name="href">
-							<xsl:value-of select="url"/>
-						</xsl:attribute>
+					
 					
 						<!-- Local -->
 						<div style="font-size: 18pt; font-weight: bold; color:#078532">
 							<p>Region: "<xsl:value-of select="@local" />"</p>
 						</div>
 					
+					<a style="text-decoration: none; color:#333" target="_blank">
+						<xsl:attribute name="href">
+							<xsl:value-of select="url"/>
+						</xsl:attribute>	
+					
 						<!-- Headline -->
 						<div style="font-size: 24pt; font-weight: bold; text-decoration: underline; color:#555">
 							<p><xsl:value-of select="titulo" /></p>
 						</div>
-						
+					</a>
+					
 						<!-- Image -->
 						<div style="width: 100%; margin: 0 auto;">
 							<div style="display: table;margin: 0 auto;">
@@ -51,15 +54,20 @@
 						
 						<!-- Corpo -->
 						<div style="font-size: 13pt;text-align:justify;color:#333">
-							<p><xsl:value-of select="texto" /></p>							
+							<p><xsl:value-of select="texto" /></p>	
+							<br/>
 						</div>
 						
-						<!-- Category -->
-<!-- 						<div style="font-size: 8pt; color:#888">	 -->
-<!-- 							<p>Category - <xsl:value-of select="categoria" /></p> -->
-<!-- 						</div> -->
-						
-					</a>
+						<!-- Video -->
+						<a style="text-decoration: none; color:#333" target="_blank">
+							<xsl:attribute name="href">
+								<xsl:value-of select="videourl"/>
+							</xsl:attribute>
+	
+							<div style="font-size: 16pt; font-weight: bold; text-decoration: underline; color:#555">
+								<p>See Video</p>
+							</div>
+						</a>
 				
 				</div>
 
