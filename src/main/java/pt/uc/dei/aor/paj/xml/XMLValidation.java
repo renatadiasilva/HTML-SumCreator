@@ -24,7 +24,7 @@ public class XMLValidation {
             validator.validate(new StreamSource(new File(xmlPath)));
             return true;
         } catch (IOException | SAXException e) {
-            System.out.println("Exception: "+e.getMessage());
+            System.out.println("XMLValidation Error: "+e.getMessage());
             return false;
         }
     }

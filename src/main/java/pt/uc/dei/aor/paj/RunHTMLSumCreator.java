@@ -31,7 +31,7 @@ public class RunHTMLSumCreator implements MessageListener {
 			this.cf = InitialContext.doLookup("jms/RemoteConnectionFactory");
 			this.t = InitialContext.doLookup("jms/topic/PlayTopic");
 		} catch (NamingException e) {
-			e.printStackTrace();
+            System.out.println("RunHTMLSumCreator Error: "+e.getMessage());
 		}
 	}
 
@@ -49,9 +49,9 @@ public class RunHTMLSumCreator implements MessageListener {
 			System.out.println("Exiting...");
 			System.out.println("Goodbye!");
 		} catch (JMSRuntimeException re) {
-			re.printStackTrace();
+            System.out.println("RunHTMLSumCreator.subscribe Error: "+re.getMessage());
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+            System.out.println("RunHTMLSumCreator.subscribe Error: "+e.getMessage());
 		}
 	}
 
@@ -80,10 +80,10 @@ public class RunHTMLSumCreator implements MessageListener {
 					System.out.println("XSD Validation: OK.");
 				else System.out.println("XSD Validation: FAILED!");
 			}
-		} catch (JMSException e) {
-			e.printStackTrace();
+		} catch (JMSException je) {
+            System.out.println("RunHTMLSumCreator.onMessage Error: "+je.getMessage());
 		} catch (Exception e) {
-			e.printStackTrace();
+            System.out.println("RunHTMLSumCreator.onMessage Error: "+e.getMessage());
 		}
 	}
 	
