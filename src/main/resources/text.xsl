@@ -12,7 +12,7 @@
 			
 					<a style="text-decoration: none; color:#333" target="_blank">
 						<xsl:attribute name="href">
-							<xsl:value-of select="urlPagina"/>
+							<xsl:value-of select="url"/>
 						</xsl:attribute>
 					
 						<!-- Headline -->
@@ -25,7 +25,7 @@
 							<div style="display: table;margin: 0 auto;">
 								<img>
 									<xsl:attribute name="src">
-										<xsl:value-of select="imagem" />
+										<xsl:value-of select="mediaurl" />
 									</xsl:attribute>
 								</img>
 							</div>
@@ -38,18 +38,18 @@
 						
 						<!-- Descricao -->
 						<div style="font-size: 11pt;text-align:justify;color:#333">
-							<p><xsl:value-of select="descricao" /></p>							
+							<p><xsl:for-each select="highlights" /></p>							
 						</div>
 
 						<!-- Corpo -->
 						<div style="font-size: 11pt;text-align:justify;color:#333">
-							<p><xsl:value-of select="corpo" /></p>							
+							<p><xsl:value-of select="texto" /></p>							
 						</div>
 						
 						<!-- Category -->
-						<div style="font-size: 8pt; color:#888">	
-							<p>Category - <xsl:value-of select="categoria" /></p>
-						</div>
+<!-- 						<div style="font-size: 8pt; color:#888">	 -->
+<!-- 							<p>Category - <xsl:value-of select="categoria" /></p> -->
+<!-- 						</div> -->
 						
 					</a>
 				
