@@ -8,7 +8,7 @@
 		
 			<xsl:for-each select="noticias/noticia">
 <!-- 				<div style="float: left; width:550px; max-width:550px; background-color:#ddd; padding:10px; margin:10px"> -->
-				<div style="width:550px; max-width:550px; background-color:#ddd; padding:10px; margin:10px; margin-left: auto; margin-right: auto;">
+				<div style="background-color:#BBFBD1; padding:10px; margin:10px; margin-left: auto; margin-right: auto;">
 			
 					<a style="text-decoration: none; color:#333" target="_blank">
 						<xsl:attribute name="href">
@@ -16,12 +16,12 @@
 						</xsl:attribute>
 					
 						<!-- Local -->
-						<div style="color:#1e88e5">
+						<div style="font-size: 18pt; font-weight: bold; color:#078532">
 							<p>Region: "<xsl:value-of select="@local" />"</p>
 						</div>
 					
 						<!-- Headline -->
-						<div style="color:#555">
+						<div style="font-size: 24pt; font-weight: bold; text-decoration: underline; color:#555">
 							<p><xsl:value-of select="titulo" /></p>
 						</div>
 						
@@ -37,12 +37,12 @@
 						</div>
 						
 						<!-- Author - Time -->
-						<div style="font-size: 9pt; color:#1e88e5">
-							<p><xsl:value-of select="autor" /><br/><xsl:value-of select="data" /></p>
+						<div style="font-size: 14pt; color:#078532">
+							<p><xsl:value-of select="autor" /><br/><br/><xsl:value-of select="data" /></p><br/>
 						</div>
 						
 						<!-- Descricao -->
-						<div style="font-size: 13pt;text-align:justify;color:#333">
+						<div style="font-size: 16pt; font-weight: bold; text-align:justify;color:#333">
 							<xsl:for-each select="highlights">
 								<p>&gt; <xsl:value-of select="." /><br/></p>
 							</xsl:for-each>	
@@ -50,7 +50,7 @@
 						</div>
 						
 						<!-- Corpo -->
-						<div style="font-size: 11pt;text-align:justify;color:#333">
+						<div style="font-size: 13pt;text-align:justify;color:#333">
 							<p><xsl:value-of select="texto" /></p>							
 						</div>
 						
